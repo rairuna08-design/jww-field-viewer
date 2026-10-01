@@ -9,12 +9,12 @@
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
   <title>JWW 図面・測定</title>
-  <script type="module" crossorigin src="./assets/index-BKEi4PX0.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BGZ9-1XZ.css">
+  <script type="module" crossorigin src="./assets/index-Br0jKj1e.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DByvDKDB.css">
 </head>
 <body>
   <div id="app">
-    <header class="topbar"><div><p class="eyebrow">現場ツール</p><h1>JWW 図面・測定</h1></div><label class="open-button">ファイルを開く<input id="file" type="file" accept=".jww,application/octet-stream" /></label></header>
+    <header class="topbar"><div><p class="eyebrow">現場ツール</p><h1>JWW 図面・測定</h1></div><div class="file-actions"><button id="history-open">履歴</button><label class="open-button">ファイルを開く<input id="file" type="file" accept=".jww,application/octet-stream" /></label></div></header>
     <main class="workspace">
       <canvas id="drawing" aria-label="JWW図面。測定モードで2点をタップ" tabindex="0"></canvas>
       <div id="empty"><span class="drawing-icon">⌖</span><h2>図面を開いて、測る。</h2><p>iPhoneの「ファイル」から<br>JWW図面を選択してください。</p><p class="privacy">図面は端末内で処理します。</p></div>
@@ -25,5 +25,6 @@
     <section class="measurement" aria-label="測定結果"><div class="result-row"><div><p id="scale-status">自動［未選択］</p><output id="result">— <small>mm</small></output></div><button id="reset" disabled>やり直す</button></div><p id="message" role="status" aria-live="polite">図面を開くと、表示・測定できます。</p></section>
     <footer class="toolbar"><div class="mode-switch"><button id="view" aria-pressed="true">見る</button><button id="measure" aria-pressed="false" disabled>測る</button></div><label class="scale-label">縮尺<select id="scale" aria-label="測定の縮尺"><option value="auto">自動</option><option value="20">1/20</option><option value="25">1/25</option><option value="30">1/30</option><option value="50">1/50</option><option value="100">1/100</option><option value="200">1/200</option><option value="500">1/500</option></select></label></footer>
   </div>
+  <dialog id="history-dialog" aria-labelledby="history-title"><div class="history-heading"><h2 id="history-title">最近開いた図面</h2><button id="history-close" aria-label="履歴を閉じる">閉じる</button></div><p class="history-note">図面のコピーをこの端末に保存します（最近10件・合計100 MBまで）。更新された図面は「ファイルを開く」で選び直してください。</p><p id="history-status" role="status"></p><ul id="history-list"></ul><p class="history-note">履歴はこのブラウザに保存されます。削除するのは保存したコピーだけです。元のファイルは変更しません。</p></dialog>
 </body>
 </html>
